@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8f5ec" />
+  <meta name="description" content="A very important, extremely unofficial invitation for Mary on Sunday, 15 November." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mary — An Extremely Official Invitation ✉️" />
+  <meta property="og:description" content="Your presence has been formally requested. There will be no spreadsheets." />
+  <title>For Mary — An Extremely Official Invitation</title>
+  <style>
+    :root {
+      --ink: #274138;
+      --ink-soft: #627268;
+      --paper: #fffdf8;
+      --canvas: #f8f5ec;
+      --rose: #f8e1de;
+      --rose-dark: #c77372;
+      --line: #d9ddd2;
+      --gold: #c7a565;
+      --shadow: 0 26px 70px rgba(42, 52, 40, .09), 0 3px 10px rgba(42, 52, 40, .045);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 14% 16%, rgba(243, 211, 205, .42), transparent 26%),
+        radial-gradient(circle at 90% 82%, rgba(199, 216, 196, .40), transparent 29%),
+        var(--canvas);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: .36;
+      pointer-events: none;
+      background-image: radial-gradient(#cbbfb4 .65px, transparent .65px);
+      background-size: 18px 18px;
+    }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--rose-dark); outline-offset: 4px; }
+    .page { width: min(94%, 920px); margin: 0 auto; padding: clamp(28px, 7vh, 76px) 0 42px; }
+    .topline { text-align: center; font-size: 10px; letter-spacing: .29em; font-weight: 750; text-transform: uppercase; color: #7f8878; margin-bottom: 22px; }
+    .invitation {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(238px, .76fr) minmax(0, 1.5fr);
+      background: var(--paper);
+      border: 1px solid #e9e8df;
+      border-radius: 5px;
+      box-shadow: var(--shadow);
+      animation: rise .65s both ease-out;
+    }
+    .invitation::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--rose-dark) 0 32%, var(--ink) 32% 100%); z-index: 1; }
+    .left {
+      background: var(--rose);
+      padding: 38px 29px 31px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      border-right: 1px solid #eed7d1;
+      min-height: 592px;
+      position: relative;
+    }
+    .left::before, .left::after { content: "✳"; position: absolute; font-family: Georgia, serif; color: #c78985; opacity: .58; font-size: 28px; }
+    .left::before { top: 100px; left: 27px; transform: rotate(-16deg); }
+    .left::after { right: 26px; bottom: 126px; transform: rotate(24deg); }
+    .mini-head { font-size: 10px; text-transform: uppercase; letter-spacing: .18em; font-weight: 750; line-height: 1.7; }
+    .drawing { position: relative; width: 182px; height: 174px; display: grid; place-items: center; margin: 20px auto 5px; }
+    .drawing svg { width: 164px; height: 164px; filter: drop-shadow(0 7px 0 rgba(172,101,101,.065)); }
+    .date-display { position: relative; width: 100%; margin: 5px 0; }
+    .date-display .day { font: 400 clamp(100px, 13vw, 136px)/.86 Georgia, "Times New Roman", serif; letter-spacing: -.075em; padding-right: .08em; }
+    .date-display .month { margin-top: 15px; font-size: 13px; font-weight: 800; letter-spacing: .4em; padding-left: .4em; }
+    .date-display .year { margin-top: 9px; font: italic 17px Georgia, serif; }
+    .stamp { border: 1px solid rgba(39,65,56,.55); border-radius: 999px; width: 120px; height: 120px; display: grid; place-items: center; transform: rotate(-12deg); padding: 12px; margin: 22px auto 0; }
+    .stamp-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px dashed rgba(39,65,56,.52); border-radius: 50%; line-height: 1.45; text-transform: uppercase; font-size: 9px; letter-spacing: .14em; font-weight: 800; }
+    .stamp-inner span { font-size: 21px; margin: 2px 0; line-height: 1; }
+    .right { padding: clamp(30px, 5.3vw, 58px) clamp(26px, 6vw, 62px) 34px; }
+    .document-label { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--ink-soft); font-size: 9px; letter-spacing: .17em; font-weight: 750; text-transform: uppercase; }
+    .document-label .symbol { color: var(--rose-dark); font: 22px Georgia, serif; letter-spacing: 0; }
+    .eyebrow { font-size: 11px; font-weight: 750; text-transform: uppercase; letter-spacing: .2em; margin: 37px 0 15px; color: var(--rose-dark); }
+    h1 { font: 400 clamp(47px, 6.8vw, 73px)/.99 Georgia, "Times New Roman", serif; letter-spacing: -.052em; margin: 0; max-width: 570px; }
+    h1 em { font-weight: normal; color: #ba6f70; }
+    .subhead { margin: 25px 0 0; font: 17px/1.7 Georgia, "Times New Roman", serif; color: #4d5c53; }
+    .subhead strong { color: var(--ink); font-weight: bold; }
+    .rule { display: flex; align-items: center; gap: 13px; margin: 29px 0 24px; color: var(--gold); font-size: 16px; }
+    .rule::before, .rule::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 18px; }
+    .field small { display: block; text-transform: uppercase; font-weight: 750; letter-spacing: .18em; color: #8a948b; font-size: 9px; margin-bottom: 7px; }
+    .field strong { display: block; font: 400 20px/1.3 Georgia, serif; }
+    .field .muted { display: block; font-size: 12px; line-height: 1.5; color: var(--ink-soft); margin-top: 4px; }
+    .map-link { display: inline-flex; align-items: center; gap: 4px; color: #9b5759; text-decoration-color: #dab5b2; text-underline-offset: 4px; font-size: 12px; margin-top: 7px; }
+    .fineprint { margin: 26px 0 0; padding: 16px 18px; background: #f3f6ee; border-left: 2px solid #b7c8ad; color: #536656; font-size: 12px; line-height: 1.7; }
+    .fineprint b { font-weight: 750; color: var(--ink); }
+    .closing { text-align: right; margin-top: 21px; font: italic 14px/1.5 Georgia, serif; color: #8d8077; }
+    .actions { margin: 26px auto 0; max-width: 730px; text-align: center; animation: rise .65s .12s both ease-out; }
+    .action-title { font: 400 23px Georgia, serif; margin: 0 0 14px; }
+    .action-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; }
+    .btn { border-radius: 50px; cursor: pointer; font: 700 12px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; letter-spacing: .012em; padding: 15px 22px; border: 1px solid transparent; transition: transform .18s, background .18s, box-shadow .18s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn-primary { background: var(--ink); color: #fffdf8; box-shadow: 0 5px 13px rgba(39,65,56,.13); }
+    .btn-primary:hover { background: #345b4d; }
+    .btn-secondary { color: var(--ink); background: transparent; border-color: #b9c3b9; }
+    .btn-secondary:hover { background: #fffdf8; }
+    .disclaimer { font-size: 11px; color: #849085; line-height: 1.6; margin: 12px 0 0; }
+    .reply { background: #fffdf8; border: 1px solid #e3e6dc; box-shadow: 0 8px 28px rgba(39,65,56,.05); border-radius: 7px; margin: 19px auto 0; padding: 23px 24px 21px; max-width: 570px; text-align: center; }
+    .reply[hidden] { display: none; }
+    .reply-icon { font-size: 26px; margin-bottom: 5px; }
+    .reply h2 { font: 400 25px Georgia, serif; margin: 0 0 7px; }
+    .reply p { font-size: 13px; color: #647268; line-height: 1.6; margin: 0 auto 15px; max-width: 470px; }
+    .reply-quote { border: 1px dashed #cbd6c9; background: #f8faf4; border-radius: 5px; padding: 13px 17px; font: italic 15px/1.5 Georgia, serif; color: var(--ink); }
+    .reply-buttons { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    .btn-small { padding: 11px 17px; font-size: 11px; }
+    .page-footer { margin-top: 26px; color: #93968a; font: italic 12px Georgia, serif; text-align: center; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 700px) {
+      .page { width: min(93%, 540px); padding-top: 22px; }
+      .topline { line-height: 1.6; font-size: 9px; margin-bottom: 14px; }
+      .invitation { grid-template-columns: 1fr; }
+      .left { min-height: auto; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; padding: 26px 22px 25px; border-right: 0; border-bottom: 1px solid #eed7d1; }
+      .left::before, .left::after, .drawing { display: none; }
+      .mini-head { align-self: center; max-width: 104px; text-align: left; font-size: 9px; }
+      .date-display { margin: 0; }
+      .date-display .day { font-size: 82px; }
+      .date-display .month { margin-top: 6px; font-size: 10px; }
+      .date-display .year { margin-top: 3px; font-size: 13px; }
+      .stamp { width: 77px; height: 77px; padding: 6px; margin: 0; align-self: center; }
+      .stamp-inner { font-size: 6px; letter-spacing: .05em; }
+      .stamp-inner span { font-size: 14px; }
+      .right { padding: 33px 27px 29px; }
+      .eyebrow { margin-top: 30px; }
+      h1 { font-size: clamp(43px, 10vw, 60px); }
+      .subhead { font-size: 16px; }
+    }
+    @media (max-width: 390px) {
+      .left { grid-template-columns: 85px 1fr 66px; gap: 4px; padding-left: 16px; padding-right: 16px; }
+      .stamp { width: 66px; height: 66px; }
+      .date-display .day { font-size: 69px; }
+      .right { padding-left: 21px; padding-right: 21px; }
+      .field strong { font-size: 18px; }
+      .details { gap: 20px 10px; }
+      .btn { width: 100%; }
+      .reply-buttons .btn { width: auto; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline">World's No.1 Colleague! - No questions asked. -</div>
+    <article class="invitation" aria-labelledby="invitation-title">
+      <aside class="left" aria-label="Event date and official seal">
+        <div class="mini-head">A most important social engagement<br />✳</div>
+        <div class="drawing" aria-hidden="true">
+          <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 98C28 56 58 31 96 31C133 31 160 60 160 100" stroke="#C48380" stroke-width="1.3" stroke-dasharray="3 5"/>
+            <path d="M38 74L82 53L142 84L95 107L38 74Z" fill="#FFFBF7" stroke="#31564A" stroke-width="2.1" stroke-linejoin="round"/>
+            <path d="M38 74V129L95 156V107L38 74Z" fill="#F5B9B3" stroke="#31564A" stroke-width="2.1" stroke-linejoin="round"/>
+            <path d="M95 107L142 84V131L95 156V107Z" fill="#E7A29C" stroke="#31564A" stroke-width="2.1" stroke-linejoin="round"/>
+            <path d="M57 63L57 41Q57 35 63 35H113Q119 35 119 41V94" stroke="#31564A" stroke-width="2.2"/>
+            <path d="M69 49H108M69 60H102M69 71H95" stroke="#DDA6A1" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="95" cy="119" r="9" fill="#B86365"/><path d="M91 119L94 122L100 115" stroke="#FFFBF7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M144 31L148 39L156 43L148 47L144 55L140 47L132 43L140 39L144 31Z" fill="#C59B5B"/>
+            <path d="M26 42L28 47L33 49L28 51L26 56L24 51L19 49L24 47L26 42Z" fill="#C59B5B"/>
+          </svg>
+        </div>
+        <div class="date-display" aria-label="Sunday, 15 November 2026">
+          <div class="day">15</div>
+          <div class="month">NOVEMBER</div>
+          <div class="year">Sunday, 2026</div>
+        </div>
+        <div class="stamp" aria-hidden="true"><div class="stamp-inner">Officially<span>✳</span>unofficial</div></div>
+      </aside>
+      <section class="right">
+        <div class="document-label"><span>To: Mary · File no. 15/11 · Priority: Very high</span><span class="symbol" aria-hidden="true">✳</span></div>
+        <div class="eyebrow">Notice of formal invitation</div>
+        <h1 id="invitation-title">You are hereby <em>invited.</em></h1>
+        <p class="subhead">Dear <strong>Mary</strong>,<br />after careful consideration, extensive deliberation, and absolutely no committee meetings, it has been decided that your company is officially requested for an important evening of good food and and drinks.</p>
+        <div class="rule" aria-hidden="true">✳</div>
+        <div class="details">
+          <div class="field">
+            <small>When</small>
+            <strong>Sunday, 15 November</strong>
+            <span class="muted">2026 · An excellent day, allegedly.</span>
+          </div>
+          <div class="field">
+            <small>Time</small>
+            <strong>19:30</strong>
+            <span class="muted">Punctuality is admired, not audited.</span>
+          </div>
+          <div class="field">
+            <small>Location</small>
+            <strong>Picnic, Nicosia</strong>
+            <span class="muted">36 Asklipiou Street, Nicosia</span>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Picnic%20Asklipiou%2036%20Nicosia%20Cyprus" target="_blank" rel="noopener noreferrer">View directions <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="field">
+            <small>Dress code</small>
+            <strong>Entirely up to you</strong>
+            <span class="muted">The dress-code committee has resigned.</span>
+          </div>
+        </div>
+        <p class="fineprint"><b>Official agenda:</b> Good food, good conversation, and absolutely no PowerPoint presentations. Minutes will not be taken. Smiling is strongly encouraged, but remains voluntary.</p>
+        <div class="closing">Kind regards,<br />Your Very Serious Colleague<br />(Zenon)</div>
+      </section>
+    </article>
+
+    <section class="actions" aria-labelledby="rsvp-title">
+      <h2 class="action-title" id="rsvp-title">Kindly submit your official response.</h2>
+      <div class="action-row">
+        <button class="btn btn-primary" id="accept" type="button">I accept this very serious invitation</button>
+        <button class="btn btn-secondary" id="reschedule" type="button">I request an adjournment</button>
+      </div>
+      <p class="disclaimer">All responses are entirely voluntary.</p>
+
+      <div class="reply" id="reply" role="status" aria-live="polite" hidden>
+        <div class="reply-icon" id="reply-icon" aria-hidden="true">✳</div>
+        <h2 id="reply-heading"></h2>
+        <p id="reply-description"></p>
+        <div class="reply-quote" id="reply-message"></div>
+        <div class="reply-buttons">
+          <button type="button" class="btn btn-primary btn-small" id="copy">Copy my response</button>
+          <a class="btn btn-secondary btn-small" id="whatsapp" target="_blank" rel="noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;" href="https://wa.me/35799229888">Send via WhatsApp ↗</a>
+        </div>
+        <p class="disclaimer">WhatsApp opens a message to the organiser. Nothing is sent until you press Send.</p>
+      </div>
+    </section>
+    <footer class="page-footer">Issued with sincerity, sealed with nonsense. ✳</footer>
+  </main>
+  <script>
+    // RSVP interactions are client-side only. No response is sent without her action.
+    const reply = document.getElementById('reply');
+    const replyHeading = document.getElementById('reply-heading');
+    const replyDescription = document.getElementById('reply-description');
+    const replyMessage = document.getElementById('reply-message');
+    const replyIcon = document.getElementById('reply-icon');
+    const whatsApp = document.getElementById('whatsapp');
+    const copyButton = document.getElementById('copy');
+    let message = '';
+
+    function showReply(type) {
+      if (type === 'accept') {
+        replyIcon.textContent = '✓';
+        replyHeading.textContent = 'Your acceptance is duly noted.';
+        replyDescription.textContent = 'Excellent decision. Your colleague is delighted. Please send your reply so the organiser actually knows!';
+        message = 'Dear Colleague, I, Mary, hereby officially accept the invitation to Picnic, Nicosia, on Sunday 15 November at 19:30. Please consider this my formal RSVP. ✳';
+      } else {
+        replyIcon.textContent = '✉';
+        replyHeading.textContent = 'Petition for adjournment received.';
+        replyDescription.textContent = 'A perfectly valid request. Your colleague respects your calendar and welcomes an alternative date.';
+        message = 'Dear Colleague, I, Mary, hereby request an adjournment. Could we choose another day? This is a formal scheduling petition. ✳';
+      }
+      replyMessage.textContent = '“' + message + '”';
+      whatsApp.href = 'https://wa.me/35799229888?text=' + encodeURIComponent(message);
+      copyButton.textContent = 'Copy my response';
+      reply.hidden = false;
+      reply.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+    }
+    document.getElementById('accept').addEventListener('click', () => showReply('accept'));
+    document.getElementById('reschedule').addEventListener('click', () => showReply('reschedule'));
+    copyButton.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(message);
+        } else {
+          const helper = document.createElement('textarea');
+          helper.value = message;
+          helper.style.position = 'fixed';
+          helper.style.opacity = '0';
+          document.body.appendChild(helper);
+          helper.select();
+          if (!document.execCommand('copy')) throw new Error('Copy not supported');
+          helper.remove();
+        }
+        copyButton.textContent = 'Copied! ✓';
+      } catch (_) {
+        copyButton.textContent = 'Select the message above to copy';
+      }
+    });
+  </script>
+</body>
+</html>
